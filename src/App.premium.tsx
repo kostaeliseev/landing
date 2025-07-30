@@ -145,16 +145,13 @@ function App() {
             <>
               <div className="flex items-center space-x-3 mb-3">
                 <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-                  <Crown className="w-5 h-5 text-blue-600" />
+                  <Zap className="w-5 h-5 text-blue-600" />
                 </div>
                 <div>
                   <h1 className="text-xl font-bold text-white">
                     Landing Builder
                   </h1>
-                  <div className="flex items-center space-x-1">
-                    <Star className="w-3 h-3 text-yellow-300 fill-current" />
-                    <span className="text-xs text-blue-100">Pro</span>
-                  </div>
+                  <span className="text-xs text-blue-100">Professional</span>
                 </div>
               </div>
               <p className="text-blue-100 text-sm">
@@ -163,7 +160,7 @@ function App() {
             </>
           ) : (
             <div className="flex justify-center">
-              <Crown className="w-6 h-6 text-white" />
+              <Zap className="w-6 h-6 text-white" />
             </div>
           )}
         </div>

@@ -31,9 +31,6 @@ export function PremiumSettingsPanel({
     { id: 'general', label: 'General', icon: Settings },
     { id: 'appearance', label: 'Appearance', icon: Palette },
     { id: 'performance', label: 'Performance', icon: Zap },
-    { id: 'security', label: 'Security', icon: Shield },
-    { id: 'account', label: 'Account', icon: User },
-    { id: 'billing', label: 'Billing', icon: Crown },
   ];
 
   const renderGeneralSettings = () => (
@@ -188,38 +185,44 @@ export function PremiumSettingsPanel({
       <div>
         <h3 className="text-lg font-semibold text-slate-900 mb-4 flex items-center">
           <Zap className="w-5 h-5 mr-2 text-yellow-600" />
-          Performance
+          Performance & Storage
         </h3>
         
         <div className="space-y-6">
-          <div className="p-4 bg-green-50 border border-green-200 rounded-xl">
-            <div className="flex items-center space-x-2 mb-3">
-              <CheckCircle className="w-5 h-5 text-green-600" />
-              <span className="font-medium text-green-900">System Performance</span>
+          <div className="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
+            <div>
+              <label className="font-medium text-slate-900">Auto-save Interval</label>
+              <p className="text-sm text-slate-600">How often to save your work</p>
             </div>
-            <div className="grid grid-cols-2 gap-4 text-sm">
-              <div>
-                <div className="text-slate-600">Memory Usage</div>
-                <div className="font-medium text-green-700">42.3 MB</div>
-              </div>
-              <div>
-                <div className="text-slate-600">Load Time</div>
-                <div className="font-medium text-green-700">1.2s</div>
-              </div>
-            </div>
+            <select className="px-3 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500">
+              <option value="30">30 seconds</option>
+              <option value="60">1 minute</option>
+              <option value="300">5 minutes</option>
+              <option value="0">Manual only</option>
+            </select>
           </div>
 
           <div className="p-4 bg-slate-50 rounded-xl">
-            <label className="font-medium text-slate-900 mb-3 block">Cache Settings</label>
+            <label className="font-medium text-slate-900 mb-3 block">Storage Management</label>
             <div className="space-y-3">
               <button className="w-full p-3 text-left border border-slate-200 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-colors">
-                <div className="font-medium text-slate-900">Clear Image Cache</div>
-                <div className="text-sm text-slate-600">Free up 12.4 MB</div>
+                <div className="font-medium text-slate-900">Clear Browser Cache</div>
+                <div className="text-sm text-slate-600">Clear stored images and assets</div>
               </button>
-              <button className="w-full p-3 text-left border border-slate-200 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-colors">
-                <div className="font-medium text-slate-900">Clear Component Cache</div>
-                <div className="text-sm text-slate-600">Free up 5.2 MB</div>
+              <button className="w-full p-3 text-left border border-slate-200 rounded-lg hover:border-red-500 hover:bg-red-50 transition-colors">
+                <div className="font-medium text-slate-900">Reset All Settings</div>
+                <div className="text-sm text-slate-600">Reset to default preferences</div>
               </button>
+            </div>
+          </div>
+
+          <div className="p-4 bg-blue-50 border border-blue-200 rounded-xl">
+            <div className="flex items-center space-x-2 mb-2">
+              <Database className="w-4 h-4 text-blue-600" />
+              <span className="font-medium text-blue-900">Local Storage</span>
+            </div>
+            <div className="text-sm text-blue-700">
+              Your landing pages are saved locally in your browser
             </div>
           </div>
         </div>
@@ -227,60 +230,6 @@ export function PremiumSettingsPanel({
     </div>
   );
 
-  const renderBillingSettings = () => (
-    <div className="space-y-8">
-      <div>
-        <h3 className="text-lg font-semibold text-slate-900 mb-4 flex items-center">
-          <Crown className="w-5 h-5 mr-2 text-yellow-600" />
-          Billing & Subscription
-        </h3>
-        
-        <div className="space-y-6">
-          <div className="p-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl text-white">
-            <div className="flex items-center justify-between mb-4">
-              <div>
-                <h4 className="text-xl font-bold">Pro Plan</h4>
-                <p className="text-purple-100">Unlimited AI generations</p>
-              </div>
-              <div className="flex items-center space-x-1">
-                <Star className="w-5 h-5 fill-current" />
-                <Star className="w-5 h-5 fill-current" />
-                <Star className="w-5 h-5 fill-current" />
-              </div>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="text-2xl font-bold">$29/month</span>
-              <span className="px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm">Active</span>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-4">
-            <div className="p-4 border border-slate-200 rounded-xl">
-              <div className="text-2xl font-bold text-slate-900">156</div>
-              <div className="text-sm text-slate-600">Pages Created</div>
-            </div>
-            <div className="p-4 border border-slate-200 rounded-xl">
-              <div className="text-2xl font-bold text-slate-900">∞</div>
-              <div className="text-sm text-slate-600">AI Generations</div>
-            </div>
-          </div>
-
-          <div className="p-4 bg-slate-50 rounded-xl">
-            <h4 className="font-medium text-slate-900 mb-3">Usage This Month</h4>
-            <div className="space-y-2">
-              <div className="flex justify-between text-sm">
-                <span className="text-slate-600">AI Generations</span>
-                <span className="font-medium">89 / ∞</span>
-              </div>
-              <div className="w-full bg-slate-200 rounded-full h-2">
-                <div className="bg-purple-500 h-2 rounded-full" style={{ width: '45%' }}></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
 
   const renderTabContent = () => {
     switch (activeTab) {
@@ -290,8 +239,6 @@ export function PremiumSettingsPanel({
         return renderAppearanceSettings();
       case 'performance':
         return renderPerformanceSettings();
-      case 'billing':
-        return renderBillingSettings();
       default:
         return renderGeneralSettings();
     }
@@ -339,12 +286,6 @@ export function PremiumSettingsPanel({
                 </button>
               ))}
             </nav>
-
-            <div className="mt-8 p-4 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl text-white">
-              <Crown className="w-6 h-6 mb-2" />
-              <div className="text-sm font-medium">Pro Features</div>
-              <div className="text-xs text-blue-100">Unlock unlimited potential</div>
-            </div>
           </div>
 
           {/* Content */}
