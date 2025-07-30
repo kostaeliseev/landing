@@ -15,9 +15,9 @@ import {
   arrayMove,
 } from '@dnd-kit/sortable';
 import { useLandingPageStore } from '../../stores/landingPageStore';
-import { SortableSection } from './SortableSection';
+import { FixedSortableSection } from './FixedSortableSection';
 import { SectionRenderer } from './SectionRenderer';
-import { AddSectionButton } from './AddSectionButton';
+import { FixedAddSectionButton } from './FixedAddSectionButton';
 import { LandingPageSection } from '../../types';
 
 interface DragDropCanvasProps {
@@ -113,21 +113,21 @@ export const DragDropCanvas: React.FC<DragDropCanvasProps> = ({ className = '' }
               {currentPage.sections
                 .sort((a, b) => a.order - b.order)
                 .map((section) => (
-                  <SortableSection
+                  <FixedSortableSection
                     key={section.id}
                     section={section}
                     isSelected={selectedSectionId === section.id}
                     onClick={() => handleSectionClick(section.id)}
                   >
                     <SectionRenderer section={section} />
-                  </SortableSection>
+                  </FixedSortableSection>
                 ))}
             </div>
           </SortableContext>
 
           {/* Add Section Button */}
           <div className="mt-8">
-            <AddSectionButton />
+            <FixedAddSectionButton />
           </div>
 
           {/* Empty State */}
@@ -154,7 +154,7 @@ export const DragDropCanvas: React.FC<DragDropCanvasProps> = ({ className = '' }
               <p className="text-gray-600 mb-6">
                 Add sections to create your high-converting PPC landing page.
               </p>
-              <AddSectionButton variant="primary" />
+              <FixedAddSectionButton variant="primary" />
             </div>
           )}
         </div>

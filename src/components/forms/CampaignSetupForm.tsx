@@ -324,9 +324,9 @@ export const CampaignSetupForm: React.FC<CampaignSetupFormProps> = ({
                 <button
                   type="submit"
                   disabled={!isValid}
-                  className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
+                  className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-medium hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2 shadow-lg"
                 >
-                  <Wand2 className="w-4 h-4" />
+                  <Wand2 className="w-5 h-5" />
                   <span>Generate Landing Page</span>
                 </button>
               )}
