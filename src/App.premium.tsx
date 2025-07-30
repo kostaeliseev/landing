@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { 
   Plus, Settings, Eye, Download, Save, Palette, Wand2, 
-  Layers, BarChart3, Monitor, Smartphone, Tablet,
-  Search, Bell, User, ChevronDown, Grid, List,
-  Zap, Crown, Star, Sparkles
+  Layers, Monitor, Smartphone, Tablet,
+  Search, ChevronDown, Grid,
+  Zap, Sparkles
 } from 'lucide-react';
 import { DragDropCanvas } from './components/editor/DragDropCanvas';
 import { CampaignSetupForm } from './components/forms/CampaignSetupForm';
 import { BrandCustomizationPanel } from './components/ui/BrandCustomizationPanel';
-import PremiumSettingsPanel from './components/PremiumSettingsPanel';
+import WorkingSettingsPanel from './components/WorkingSettingsPanel';
 import { StickyCTA, defaultStickyCTAConfig } from './components/StickyCTA';
 import { useLandingPageStore } from './stores/landingPageStore';
 import { geminiService } from './services/geminiService';
@@ -412,15 +412,6 @@ function App() {
                   <Settings className="w-5 h-5" />
                 </button>
 
-                {/* User Menu */}
-                <div className="flex items-center space-x-2 pl-2 border-l border-slate-200">
-                  <button className="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-all">
-                    <Bell className="w-5 h-5" />
-                  </button>
-                  <button className="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-all">
-                    <User className="w-5 h-5" />
-                  </button>
-                </div>
               </div>
             </div>
           </div>
@@ -451,7 +442,7 @@ function App() {
         onClose={() => setIsBrandPanelOpen(false)}
       />
 
-      <PremiumSettingsPanel
+      <WorkingSettingsPanel
         isOpen={isSettingsPanelOpen}
         onClose={() => setIsSettingsPanelOpen(false)}
         stickyCTAConfig={stickyCTAConfig}
