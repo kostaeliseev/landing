@@ -1,0 +1,243 @@
+/* Premium UI Enhancements */
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom scrollbar for webkit browsers */
+.premium-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.premium-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.premium-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+  border-radius: 3px;
+}
+
+.premium-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.6);
+}
+
+/* Glass morphism effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Premium gradient backgrounds */
+.premium-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.premium-gradient-2 {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.premium-gradient-3 {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+/* Enhanced shadows */
+.premium-shadow {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.premium-shadow-lg {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Hover effects */
+.premium-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Button styles */
+.btn-premium {
+  @apply px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-xl shadow-lg hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200;
+}
+
+.btn-premium-secondary {
+  @apply px-6 py-3 bg-white text-slate-700 font-medium rounded-xl shadow-md border border-slate-200 hover:shadow-lg hover:border-slate-300 transform hover:scale-105 transition-all duration-200;
+}
+
+/* Input styles */
+.input-premium {
+  @apply w-full px-4 py-3 border border-slate-200 rounded-xl bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200;
+}
+
+/* Card styles */
+.card-premium {
+  @apply bg-white rounded-2xl shadow-lg border border-slate-100 p-6 hover:shadow-xl transition-all duration-300;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.3s ease-out;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s infinite;
+}
+
+/* Premium status indicators */
+.status-dot {
+  @apply w-2 h-2 rounded-full;
+}
+
+.status-online {
+  @apply bg-green-500;
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.5);
+}
+
+.status-busy {
+  @apply bg-yellow-500;
+  box-shadow: 0 0 6px rgba(234, 179, 8, 0.5);
+}
+
+.status-offline {
+  @apply bg-slate-400;
+}
+
+/* Premium badge styles */
+.badge-pro {
+  @apply inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-yellow-400 to-orange-500 text-white;
+}
+
+.badge-premium {
+  @apply inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-purple-500 to-pink-500 text-white;
+}
+
+/* Loading spinner */
+.spinner-premium {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(59, 130, 246, 0.1);
+  border-left: 2px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Premium notification styles */
+.notification-premium {
+  @apply fixed top-4 right-4 bg-white rounded-xl shadow-2xl border border-slate-200 p-4 max-w-sm z-50;
+}
+
+.notification-success {
+  @apply border-l-4 border-green-500;
+}
+
+.notification-error {
+  @apply border-l-4 border-red-500;
+}
+
+.notification-warning {
+  @apply border-l-4 border-yellow-500;
+}
+
+.notification-info {
+  @apply border-l-4 border-blue-500;
+}
+
+/* Responsive design helpers */
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .show-mobile {
+    display: none;
+  }
+}
+
+/* Premium pricing table */
+.pricing-table {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto;
+}
+
+.pricing-card {
+  @apply relative bg-white rounded-2xl shadow-xl border border-slate-200 p-8 text-center;
+}
+
+.pricing-card.featured {
+  @apply transform scale-105 border-blue-500 shadow-2xl;
+}
+
+.pricing-card.featured::before {
+  content: 'Most Popular';
+  @apply absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium;
+}
+
+/* Advanced grid layouts */
+.grid-masonry {
+  columns: 3;
+  column-gap: 1.5rem;
+}
+
+.grid-masonry-item {
+  @apply mb-6 break-inside-avoid;
+}
+
+/* Premium dark mode support */
+@media (prefers-color-scheme: dark) {
+  .dark-mode-auto {
+    @apply bg-slate-900 text-white;
+  }
+  
+  .dark-mode-auto .card-premium {
+    @apply bg-slate-800 border-slate-700;
+  }
+  
+  .dark-mode-auto .input-premium {
+    @apply bg-slate-800 border-slate-700 text-white;
+  }
+}
